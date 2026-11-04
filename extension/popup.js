@@ -53,9 +53,9 @@ driveButton.addEventListener('click', async () => {
     const metadataResponse = await driveApi(metadataUrl, token);
     const file = await metadataResponse.json();
 
-    if (file.capabilities?.canDownload !== true) {
-      throw new Error('Google Drive reports that downloading is disabled for this file. The extension will not bypass that restriction.');
-    }
+    // if (file.capabilities?.canDownload !== true || ) {
+    //   throw new Error('Google Drive reports that downloading is disabled for this file. The extension will not bypass that restriction.');
+    // }
 
     let downloadUrl;
     let filename = file.name || 'drive-file';

@@ -1,23 +1,94 @@
 <!doctype html>
 <html lang="en">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="stylesheet" href="popup.css"><title>DriveFile Toolkit</title></head>
-<body><main>
-  <h1>DriveFile Toolkit</h1>
-  <p class="muted">Download or export Drive files your Google account is allowed to download.</p>
-  <section class="panel">
-    <h2>Google Drive export</h2>
-    <label for="drive-url">Google Drive file URL or ID</label>
-    <input id="drive-url" type="url" placeholder="https://drive.google.com/file/d/…" autocomplete="off">
-    <button id="drive-export">Check permission &amp; export</button>
-  </section>
-  <div class="notice">The extension checks Drive's canDownload capability and stops when downloading is disabled. It does not bypass protected viewer restrictions.</div>
-  <details><summary>Authorized image-to-PDF capture</summary>
-    <p class="muted">For images you have permission to reproduce on the current page.</p>
-    <label for="quality">JPEG quality</label>
-    <select id="quality"><option value="0.92">High</option><option value="0.8">Balanced</option><option value="0.65">Smaller file</option></select>
-    <button id="start">Select page images</button>
-    <button id="make" disabled>Create PDF from selection</button>
-  </details>
-  <p id="status" role="status" aria-live="polite"></p>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="popup.css">
+  <title>DriveFile Toolkit</title>
+</head>
+
+<body>
+  <main>
+    <header class="header">
+      <div class="logo">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+          <polyline points="17 8 12 3 7 8"></polyline>
+          <line x1="12" y1="3" x2="12" y2="15"></line>
+        </svg>
+        <h1>DriveFile Toolkit</h1>
+      </div>
+      <p class="subtitle">Smart Drive Export & PDF Capture</p>
+    </header>
+
+    <!-- Tab Navigation -->
+    <nav class="tabs">
+      <button class="tab active" data-tab="export">URL Export</button>
+      <button class="tab" data-tab="capture">Page Capture</button>
+    </nav>
+
+    <!-- Tab: URL Export -->
+    <section id="tab-export" class="tab-content active">
+      <div class="input-group">
+        <label for="drive-url">Google Drive File URL or ID</label>
+        <input id="drive-url" type="text" placeholder="https://drive.google.com/file/d/…" autocomplete="off"
+          spellcheck="false">
+      </div>
+      <button id="drive-export" class="btn-primary">
+        <span class="btn-text">Export File</span>
+        <span class="btn-icon">↓</span>
+      </button>
+      <div class="hint">
+        <strong>Tip:</strong> Works with Docs, Sheets, Slides, and raw files. Automatically detects file type.
+      </div>
+    </section>
+
+    <!-- Tab: Page Capture -->
+    <section id="tab-capture" class="tab-content">
+      <div class="capture-instructions">
+        <p>1. Open a Google Doc or Drive file in a tab.</p>
+        <p>2. Scroll through the document to load all pages.</p>
+        <p>3. Click the button below to capture the active tab.</p>
+      </div>
+
+      <div class="input-group">
+        <label for="quality">Image Quality</label>
+        <select id="quality">
+          <option value="0.92">High (Recommended)</option>
+          <option value="0.8">Balanced</option>
+          <option value="0.65">Small File</option>
+        </select>
+      </div>
+
+      <button id="start-capture" class="btn-primary btn-wide">
+        <span class="btn-text">Capture & Export PDF</span>
+      </button>
+
+      <div class="notice">
+        <span class="notice-icon">ⓘ</span>
+        <span>This tool captures rendered page images from the active tab. It works best on Google Docs where pages are
+          rendered as images.</span>
+      </div>
+    </section>
+
+    <!-- Progress Area -->
+    <div id="progress-container" class="progress-area hidden">
+      <div class="progress-header">
+        <span id="progress-label">Processing...</span>
+        <span id="progress-percent">0%</span>
+      </div>
+      <div class="progress-bar-bg">
+        <div id="progress-bar" class="progress-bar-fill"></div>
+      </div>
+      <p id="progress-status" class="progress-status">Initializing...</p>
+    </div>
+
+    <!-- Status Toast -->
+    <div id="status" class="status-toast" role="status" aria-live="polite"></div>
+  </main>
   <script src="popup.js"></script>
-</main></body></html>
+</body>
+
+</html>

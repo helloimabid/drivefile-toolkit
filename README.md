@@ -1,44 +1,53 @@
 # DriveFile Toolkit
 
-A Chrome Manifest V3 extension + Cloudflare Worker starter for **authorized browser-side capture** of pages you are permitted to reproduce.
+Chrome Manifest V3 extension + Cloudflare Worker starter for exporting Google Drive files that the signed-in user is permitted to download, plus local PDF creation from user-selected page images.
 
-## What it does
-- Chrome extension popup lets the user start capture on the active tab.
-- Content script captures only images explicitly marked as pages in a user-selected, authorized document workflow (and offers a manual page-image selection mode).
-- Captures are converted locally into a PDF using jsPDF.
-- Optional Worker API provides a health endpoint and short-lived job metadata; it does not fetch Google Drive viewer internals, bypass access controls, or proxy protected content.
+## Features
 
-## Important boundary
-This starter intentionally does **not** scrape private Google Drive viewer internals, defeat disabled-download controls, automate scrolling to extract restricted content, or use authenticated cookies/tokens to retrieve files. Use it only for content you own or have permission to reproduce. For Google Drive files, prefer Drive API `files.get` / `files.export` when the account and file permissions allow it.
+- Google OAuth sign-in through Chrome Identity.
+- Accepts a Drive file URL or file ID.
+- Reads Drive metadata and checks `capabilities.canDownload`.
+- Downloads permitted binary files through Drive API.
+- Exports Google Docs, Sheets, and Slides to PDF when Drive permits it.
+- Refuses export when Drive reports `canDownload: false`.
+- Optional manual image selection and local PDF reconstruction for content the user is authorized to reproduce.
+- File bytes stay in the browser; the Cloudflare Worker is not in the file-download path.
 
-## Project layout
-- `extension/`: Chrome MV3 extension (popup, content script, service worker)
-- `worker/`: Cloudflare Worker API
-- `web/`: simple landing page
-- `wrangler.toml`: Worker config
+## Configure Google OAuth (required)
 
-## Run locally
-1. Install Node.js 20+.
-2. `cd worker && npm install`
-3. `npx wrangler dev`
-4. In Chrome, open `chrome://extensions`, enable Developer mode, choose **Load unpacked**, and select `extension/`.
-5. Open an authorized document page that contains page images you are allowed to reproduce. Use the extension popup and select the images/pages in the capture UI.
+1. Create/select a project in Google Cloud Console and enable the Google Drive API.
+2. Configure the OAuth consent screen.
+3. Create an OAuth client ID of type **Chrome Extension** and enter the extension ID shown at `chrome://extensions`.
+4. Replace `REPLACE_WITH_CHROME_EXTENSION_OAUTH_CLIENT_ID` in `extension/manifest.json`.
+5. Keep the `drive.readonly` scope declaration. Google may require OAuth app verification for public distribution because this is a restricted/sensitive data-access scope; review Google's current requirements before publishing.
+6. Reload the unpacked extension.
 
-## Deploy Worker
-1. `cd worker`
-2. `npx wrangler login`
-3. Set `name` and `account_id` in `wrangler.toml` if needed.
-4. `npm run deploy`
+The extension requests interactive sign-in only when the user starts an export. Tokens are handled by Chrome Identity and are not sent to the Cloudflare Worker.
 
-## Production hardening
-- Add Cloudflare Turnstile or authenticated access before exposing write endpoints.
-- Configure CORS to your exact website origin.
-- Add rate limiting and abuse monitoring.
-- Keep all file bytes in the browser unless you have a clear reason and consent to upload them.
-- Add privacy notice, retention policy, and copyright/permission workflow.
+## Install locally
 
+1. Open `chrome://extensions`.
+2. Enable Developer mode.
+3. Select **Load unpacked** and choose the `extension/` directory.
+4. Complete the OAuth configuration above.
+5. Paste a Drive file URL or ID into the popup and choose **Check permission & export**.
 
-## Notes on capture behavior
-The extension intentionally requires the user to click each image. It uses ordinary page DOM image elements and browser CORS rules. Images served cross-origin without CORS permission cannot be read; this is expected browser security behavior. It does not attempt to defeat those controls.
+## Drive API behavior
 
-For best reliability, a future production version should use a dedicated upload input for user-provided images/PDFs, and Google Drive API OAuth for files that the signed-in user is allowed to download/export.
+- For ordinary files, the extension requests `files.get?alt=media`.
+- For Google Docs, Sheets, and Slides, it requests `files.export?mimeType=application/pdf`.
+- Before either operation, it requests file metadata including `capabilities.canDownload`.
+- If that capability is false or absent, the extension stops. It does not inspect private viewer internals, scrape protected page resources, or defeat download restrictions.
+
+Some file types have Drive API export limitations or size limits. The extension displays API errors rather than attempting a viewer-based workaround.
+
+## Cloudflare Worker
+
+The Worker remains a health/status API only. The browser downloads directly from Google's API so OAuth tokens and file contents are not proxied or stored by this service. Run it with `cd worker && npm install && npm run dev`, then deploy with `npm run deploy`.
+
+## Privacy and security
+
+- Never commit OAuth client secrets or access tokens.
+- Chrome extension OAuth uses a public client ID; do not treat it as a secret.
+- File bytes are processed in the popup/browser and are not uploaded by this implementation.
+- Use only files you own or are authorized to download or reproduce.

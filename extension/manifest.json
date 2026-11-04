@@ -1,21 +1,17 @@
 {
   "manifest_version": 3,
   "name": "DriveFile Toolkit",
-  "version": "1.0.0",
-  "description": "Capture and export authorized document page images to PDF.",
-  "permissions": [
-    "activeTab",
-    "scripting",
-    "downloads"
-  ],
-  "host_permissions": [
-    "https://YOUR-WORKER.your-subdomain.workers.dev/*"
-  ],
+  "version": "1.1.0",
+  "description": "Export Google Drive files you are permitted to download and create PDFs from user-selected images.",
+  "permissions": ["activeTab", "scripting", "downloads", "identity"],
+  "host_permissions": ["https://www.googleapis.com/*"],
+  "oauth2": {
+    "client_id": "REPLACE_WITH_CHROME_EXTENSION_OAUTH_CLIENT_ID",
+    "scopes": ["https://www.googleapis.com/auth/drive.readonly"]
+  },
   "action": {
     "default_popup": "popup.html",
     "default_title": "DriveFile Toolkit"
   },
-  "background": {
-    "service_worker": "service-worker.js"
-  }
+  "background": { "service_worker": "service-worker.js" }
 }

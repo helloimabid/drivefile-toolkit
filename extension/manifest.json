@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "DriveFile Toolkit",
+  "version": "1.0.0",
+  "description": "Capture and export authorized document page images to PDF.",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "downloads"
+  ],
+  "host_permissions": [
+    "https://YOUR-WORKER.your-subdomain.workers.dev/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "DriveFile Toolkit"
+  },
+  "background": {
+    "service_worker": "service-worker.js"
+  }
+}

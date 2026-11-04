@@ -1,0 +1,1 @@
+chrome.runtime.onInstalled.addListener(()=>console.log('DriveFile Toolkit ready'));

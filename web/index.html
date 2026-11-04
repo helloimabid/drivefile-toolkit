@@ -4,16 +4,66 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="theme-color" content="#0a0a0a">
+    <meta name="color-scheme" content="dark">
+
+    <!-- Primary Meta Tags -->
+    <title>DriveFile Toolkit: Google Drive to PDF Converter & Viewer Recovery</title>
+    <meta name="title" content="DriveFile Toolkit: Google Drive to PDF Converter & Viewer Recovery">
     <meta name="description"
-        content="DriveFile Toolkit exports Google Drive files and recovers PDFs from restricted viewer sessions using smart multi-strategy capture.">
-    <title>DriveFile Toolkit — Smart Drive Export & PDF Recovery</title>
+        content="Convert Google Docs, Sheets, and Slides to PDF. Download view-only Google Drive files and recover protected PDFs using smart browser-based capture. No server, 100% private.">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://drivefile-toolkit.com/">
+    <meta property="og:title" content="DriveFile Toolkit: Smart Google Drive Export & PDF Recovery">
+    <meta property="og:description"
+        content="Export Google Drive files even when 'Download' is hidden. Convert Docs to PDF, recover view-only sheets, and save files locally in your browser.">
+    <meta property="og:image" content="https://drivefile-toolkit.com/og-image.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://drivefile-toolkit.com/">
+    <meta property="twitter:title" content="DriveFile Toolkit: Google Drive to PDF Converter">
+    <meta property="twitter:description"
+        content="Recover view-only Google Drive files and convert Docs/Sheets to PDF instantly.">
+    <meta property="twitter:image" content="https://drivefile-toolkit.com/og-image.png">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://drivefile-toolkit.com/">
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
         rel="stylesheet">
+
     <link rel="stylesheet" href="style.css">
+
+    <!-- Structured Data (JSON-LD) for Rich Snippets -->
+    <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "DriveFile Toolkit",
+    "operatingSystem": "Web (Chrome, Edge, Firefox)",
+    "applicationCategory": "File Converter",
+    "description": "A browser extension and web tool to export Google Drive files, convert Docs to PDF, and recover view-only restricted files.",
+    "url": "https://drivefile-toolkit.com/",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "featureList": [
+      "Google Drive to PDF Conversion",
+      "View-Only File Recovery",
+      "Excel to PDF Export",
+      "Client-Side PDF Generation",
+      "Protected File Capture"
+    ]
+  }
+  </script>
 </head>
 
 <body>
@@ -22,105 +72,401 @@
         <div class="glow"></div>
         <div class="fade"></div>
     </div>
-    <main class="page">
-        <header class="hero">
+
+    <nav class="top-nav" aria-label="Main navigation">
+        <div class="nav-container">
             <a class="brand" href="#" aria-label="DriveFile Toolkit home"><span
                     class="brand-mark">D</span><span>DriveFile <b>Toolkit</b></span></a>
+            <div class="nav-links">
+                <a href="#features">Features</a>
+                <a href="#how-it-works">How It Works</a>
+                <a href="#faq">FAQ</a>
+                <a href="https://github.com/helloimabid/drivefile-toolkit" target="_blank"
+                    rel="noopener noreferrer">GitHub</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="page">
+        <!-- Hero Section -->
+        <header class="hero">
             <div class="hero-copy">
                 <span class="eyebrow"><i></i> SMART DRIVE EXPORT & PDF RECOVERY</span>
-                <h1>Your documents,<br><span>beyond the download button.</span></h1>
-                <p class="lead">Export Google Drive files and recover PDFs from restricted viewer sessions. When Google
-                    hides the download button, the toolkit recovers what's already rendered on screen.</p>
+                <h1>Convert Google Docs to PDF & Recover View-Only Drive Files</h1>
+                <p class="lead">The ultimate <strong>Google Drive to PDF</strong> converter. When the download button is
+                    missing, DriveFile Toolkit recovers the content. Export <strong>Google Sheets to PDF</strong>, save
+                    <strong>view-only documents</strong>, and handle <strong>protected PDFs</strong> entirely in your
+                    browser.</p>
                 <div class="actions">
-                    <a class="button light" href="https://github.com/helloimabid/drivefile-toolkit" target="_blank"
-                        rel="noopener noreferrer">View project on GitHub <span>↗</span></a>
-                    <a class="button outline" href="#features">Explore features <span>↓</span></a>
+                    <a class="button light" href="#install">Get the Extension <span>↓</span></a>
+                    <a class="button outline" href="#how-it-works">See How It Works</a>
+                </div>
+                <div class="hero-badges">
+                    <span class="badge">✓ No Server Uploads</span>
+                    <span class="badge">✓ Works on Restricted Files</span>
+                    <span class="badge">✓ Doc, Sheet, Slide Support</span>
                 </div>
             </div>
 
             <section class="flow-card" aria-label="Quick start flow">
                 <div class="card-top">
-                    <div class="window-dots"><i></i><i></i><i></i></div><span>HOW IT WORKS</span><span
-                        class="live"><i></i> MULTI-STRATEGY</span>
+                    <div class="window-dots"><i></i><i></i><i></i></div><span>WORKFLOW</span><span class="live"><i></i>
+                        ACTIVE</span>
                 </div>
                 <div class="flow-content">
                     <div class="flow-step">
-                        <div class="step-heading">01 <span>DETECT & EXPORT</span><i></i></div>
-                        <div class="code"><b>DRIVE</b><span>API check → direct export</span><span class="arrow">→</span>
-                        </div>
+                        <div class="step-heading">01 <span>PASTE LINK</span><i></i></div>
+                        <div class="code"><b>URL</b><span>Drive Doc or Sheet</span><span class="arrow">→</span></div>
                     </div>
                     <div class="flow-step">
-                        <div class="step-heading">02 <span>RECOVER FROM VIEWER</span><i></i></div>
-                        <div class="code"><b>VIEWER</b><span>Capture rendered page images</span><span
-                                class="arrow">→</span></div>
+                        <div class="step-heading">02 <span>DETECT FORMAT</span><i></i></div>
+                        <div class="code"><b>API</b><span>Check Permissions</span><span class="arrow">→</span></div>
                     </div>
                     <div class="flow-step">
-                        <div class="step-heading">03 <span>SAVE LOCALLY</span><i></i></div>
-                        <div class="code"><b>LOCAL</b><span>PDF built in your browser</span><span class="arrow">✓</span>
-                        </div>
+                        <div class="step-heading">03 <span>RECOVER PDF</span><i></i></div>
+                        <div class="code"><b>PDF</b><span>Save to Device</span><span class="arrow">✓</span></div>
                     </div>
                 </div>
-                <div class="card-foot"><span>◈</span> WORKS EVEN WHEN "DOWNLOAD" IS HIDDEN <span
-                        class="divider">/</span> NO SERVER NEEDED</div>
+                <div class="card-foot"><span>◈</span> BROWSER-BASED <span class="divider">/</span> PERMISSION-AWARE
+                </div>
             </section>
         </header>
 
+        <!-- Features Section -->
         <section class="feature-section" id="features">
             <div class="section-heading">
-                <div><span class="eyebrow">SMARTER THAN THE UI</span>
-                    <h2>Recovers what Google<br><span>hides from you.</span></h2>
+                <div><span class="eyebrow">CAPABILITIES</span>
+                    <h2>More Than Just a <strong>PDF Downloader</strong></h2>
                 </div>
-                <p>Three strategies working together. If the API says "no download," the toolkit falls back to what the
-                    viewer already loaded into your browser.</p>
+                <p>Most tools stop at the API. DriveFile Toolkit goes deeper, using viewer recovery to handle
+                    <strong>Google Drive protected files</strong> and <strong>view-only restrictions</strong>.</p>
             </div>
             <div class="feature-grid">
                 <article class="feature-card">
-                    <div class="feature-icon">↧</div><span class="card-kicker">01 / API EXPORT</span>
-                    <h3>Direct file export</h3>
-                    <p>Uses the Drive API to export Docs, Sheets, Slides as PDFs and download raw files. Respects
-                        file-level permissions on your account.</p>
-                    <div class="feature-meta"><span class="dot blue"></span> GOOGLE DRIVE API</div>
+                    <div class="feature-icon">↧</div><span class="card-kicker">01 / CONVERSION</span>
+                    <h3>Google Doc to PDF & Excel Export</h3>
+                    <p>Instantly convert <strong>Google Documents</strong> to PDF, export <strong>Google Sheets to
+                            PDF</strong>, or download raw <strong>Excel files</strong>. The tool automatically detects
+                        the <strong>file format</strong> and selects the optimal export path, ensuring high-quality
+                        <strong>PDF file</strong> generation.</p>
+                    <div class="feature-meta"><span class="dot blue"></span> API-DRIVEN EXPORT</div>
                 </article>
                 <article class="feature-card">
-                    <div class="feature-icon">▤</div><span class="card-kicker">02 / VIEWER RECOVERY</span>
-                    <h3>Restricted file capture</h3>
-                    <p>When "Download" is disabled, the viewer still renders pages as images in your browser. The
-                        toolkit captures those rendered images and assembles them into a PDF — recovering content the UI
-                        won't let you download directly.</p>
-                    <div class="feature-meta"><span class="dot green"></span> BLOB IMAGE CAPTURE</div>
+                    <div class="feature-icon">👁</div><span class="card-kicker">02 / RECOVERY</span>
+                    <h3>View-Only & Protected File Capture</h3>
+                    <p>Struggling with a <strong>view-only Google Drive</strong> link? When the owner disables
+                        downloading, the viewer still renders the pages. Our <strong>PDF recovery</strong> engine
+                        captures these rendered images and assembles them into a clean, downloadable <strong>PDF
+                            file</strong>. Perfect for <strong>protected PDFs</strong> and restricted <strong>Google
+                            Docs</strong>.</p>
+                    <div class="feature-meta"><span class="dot green"></span> VIEWER RECOVERY</div>
                 </article>
                 <article class="feature-card">
-                    <div class="feature-icon">◈</div><span class="card-kicker">03 / LOCAL PDF</span>
-                    <h3>Built in your browser</h3>
-                    <p>PDF assembly happens entirely client-side. No images are uploaded to a server. The toolkit reads
-                        what's already on your screen and writes the file to your disk.</p>
-                    <div class="feature-meta"><span class="dot gray"></span> 100% CLIENT-SIDE</div>
+                    <div class="feature-icon">🔒</div><span class="card-kicker">03 / PRIVACY</span>
+                    <h3>100% Client-Side Processing</h3>
+                    <p>Your data never leaves your browser. Unlike online <strong>PDF converters</strong> that upload
+                        files to a server, DriveFile Toolkit processes <strong>Google Drive files</strong> locally. This
+                        ensures <strong>confidential documents</strong> and sensitive <strong>Excel
+                            spreadsheets</strong> remain private.</p>
+                    <div class="feature-meta"><span class="dot gray"></span> ZERO UPLOAD</div>
                 </article>
             </div>
         </section>
 
-        <section class="permission-card">
-            <div class="permission-icon">ⓘ</div>
-            <div>
-                <span class="eyebrow">HOW PERMISSIONS WORK</span>
-                <h2>Respects your access. Outsmarts the UI.</h2>
-                <p>The toolkit uses your authenticated Google session to check what you can access. If the API allows a
-                    direct export, it takes the fast path. If the download is restricted, it falls back to recovering
-                    the content the viewer already rendered for you — the same content you're looking at on screen. It
-                    doesn't access files your account can't see, but it won't stop just because Google hid the download
-                    button.</p>
+        <!-- How It Works / Technical Deep Dive -->
+        <section class="tech-section" id="how-it-works">
+            <div class="section-heading">
+                <div><span class="eyebrow">UNDER THE HOOD</span>
+                    <h2>How We Bypass <strong>"Download Disabled"</strong></h2>
+                </div>
+                <p>Understanding the difference between API restrictions and Viewer rendering is key to recovering
+                    <strong>Google Drive PDFs</strong>.</p>
+            </div>
+
+            <div class="tech-grid">
+                <div class="tech-item">
+                    <h4>1. The API Layer</h4>
+                    <p>First, we query the <strong>Google Drive API</strong>. If <code>canDownload</code> is true, we
+                        perform a direct <strong>media export</strong>. This is the fastest way to get a <strong>Google
+                            Doc to PDF</strong> conversion or download an <strong>Excel file</strong> in its native
+                        format.</p>
+                </div>
+                <div class="tech-item">
+                    <h4>2. The Viewer Layer (Recovery)</h4>
+                    <p>If the API blocks the download (common with <strong>view-only</strong> permissions), we pivot to
+                        the <strong>Google Docs viewer</strong>. The browser must render the document to show you the
+                        text. These rendered pages are high-fidelity <code>blob:</code> images. We intercept these
+                        images, process them via Canvas, and stitch them into a <strong>PDF file</strong>.</p>
+                </div>
+                <div class="tech-item">
+                    <h4>3. Local Assembly</h4>
+                    <p>Using a minimal, efficient <strong>PDF writer</strong>, we package the captured images into a
+                        standard <strong>PDF format</strong>. No external libraries like jsPDF are needed in the final
+                        output, keeping the <strong>file size</strong> optimized.</p>
+                </div>
             </div>
         </section>
+
+        <!-- Use Cases / Keywords Targeting -->
+        <section class="use-cases" id="use-cases">
+            <h2>Common Scenarios We Solve</h2>
+            <div class="use-case-grid">
+                <div class="use-case">
+                    <h4>"How do I download a view-only Google Doc?"</h4>
+                    <p>Use the <strong>Page Recovery</strong> tab. Open the document, scroll to the bottom to load all
+                        pages, and click <strong>Recover & Export</strong>. This works for <strong>Google Docs</strong>,
+                        <strong>Slides</strong>, and <strong>Sheets</strong> where the download button is hidden.</p>
+                </div>
+                <div class="use-case">
+                    <h4>"Convert Google Sheets to PDF without printing"?</h4>
+                    <p>Paste the <strong>Google Sheets</strong> link into the <strong>Drive Export</strong> tab. The
+                        tool detects the <strong>spreadsheet</strong> mimeType and exports it directly as a <strong>PDF
+                            file</strong> via the API, preserving the grid layout better than a screenshot.</p>
+                </div>
+                <div class="use-case">
+                    <h4>"Download a protected PDF from Google Drive"?</h4>
+                    <p>If you have a <strong>protected PDF</strong> in Drive that you can view but not download, the
+                        recovery mode captures the visual output. This is ideal for <strong>legal documents</strong> or
+                        <strong>contracts</strong> shared with view-only access.</p>
+                </div>
+                <div class="use-case">
+                    <h4>"Save Google Docs as .docx or .pdf"?</h4>
+                    <p>While our primary focus is <strong>PDF export</strong>, the API path allows for native format
+                        downloads if permitted. If <strong>DOCX</strong> download is disabled, the <strong>PDF</strong>
+                        recovery ensures you still have a portable copy of the <strong>Google Doc</strong>.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq-section" id="faq">
+            <div class="section-heading">
+                <div><span class="eyebrow">SUPPORT</span>
+                    <h2>Frequently Asked Questions</h2>
+                </div>
+            </div>
+            <div class="faq-grid">
+                <details class="faq-item">
+                    <summary>Does this work on private Google Drive files?</summary>
+                    <p>Yes, provided your Google account has view access to the file. The tool uses your authenticated
+                        session to check permissions. It cannot access files you don't have permission to see, but it
+                        can recover content from files where the owner has disabled the "Download" button for viewers.
+                    </p>
+                </details>
+                <details class="faq-item">
+                    <summary>Why is the PDF quality different in Recovery mode?</summary>
+                    <p>Recovery mode captures the <strong>rendered viewer</strong>. The quality depends on the
+                        resolution of the images Google renders in your browser. For best results, ensure your browser
+                        zoom is at 100% and the document is fully loaded. API Export (when available) provides
+                        vector-quality <strong>PDFs</strong>, which is superior for text editing.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>Can I convert a PDF to a Google Doc?</summary>
+                    <p>DriveFile Toolkit is optimized for <strong>exporting from Drive</strong> (Drive to PDF/Doc).
+                        Converting a local PDF <em>into</em> a Google Doc is a different workflow typically handled by
+                        Google's native "File > Import" feature or dedicated OCR tools. However, you can use our tool to
+                        extract text-heavy <strong>PDFs</strong> from Drive for local editing.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>What file formats are supported?</summary>
+                    <p>We support all native Google Workspace formats: <strong>Google Docs</strong> (.google-docs),
+                        <strong>Sheets</strong> (.google-sheets), and <strong>Slides</strong> (.google-slides). We also
+                        handle standard files stored in Drive: <strong>PDF</strong>, <strong>DOCX</strong>,
+                        <strong>XLSX</strong>, images, and archives. The <strong>PDF export</strong> feature works on
+                        any viewable document.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>Is my data safe?</summary>
+                    <p>Absolutely. DriveFile Toolkit is a <strong>client-side tool</strong>. It runs in your browser's
+                        memory. No file contents are sent to our servers. The only network requests made are to
+                        <strong>Google's API</strong> (using your token) to fetch the file metadata and content, and to
+                        <strong>Google Fonts</strong> for the UI. Your <strong>documents</strong> stay on your device.
+                    </p>
+                </details>
+            </div>
+        </section>
+    <!-- CTA Section -->
+    <section class="cta-section" id="install">
+        <div class="cta-content">
+            <h2>Ready to recover your <strong>Google Drive files</strong>?</h2>
+            <p>Stop fighting with disabled download buttons. Install DriveFile Toolkit and turn any viewable <strong>Google
+                    Doc</strong>, <strong>Sheet</strong>, or <strong>Slide</strong> into a local <strong>PDF file</strong>
+                in seconds.</p>
+            <div class="cta-buttons">
+                <a href="https://chrome.google.com/webstore/detail/drivefile-toolkit" class="button light" target="_blank"
+                    rel="noopener noreferrer">Add to Chrome <span>↗</span></a>
+                <a href="https://github.com/helloimabid/drivefile-toolkit" class="button outline" target="_blank"
+                    rel="noopener noreferrer">View Source Code</a>
+            </div>
+            <p class="cta-note">Free forever. No account required. Works in Chrome, Edge, and Firefox.</p>
+        </div>
+    </section>
+    
+    <!-- Knowledge Base / SEO Text Block -->
+    <section class="knowledge-base" id="knowledge">
+        <div class="section-heading">
+            <div><span class="eyebrow">KNOWLEDGE BASE</span>
+                <h2>Mastering <strong>Google Drive</strong> Exports & <strong>PDF</strong> Formats</h2>
+            </div>
+            <p>A comprehensive guide to understanding file permissions, conversion paths, and troubleshooting common
+                <strong>Google Drive</strong> download issues.</p>
+        </div>
+    
+        <div class="kb-grid">
+            <!-- Column 1: Drive & Permissions -->
+            <div class="kb-column">
+                <h3>Understanding "View-Only" Restrictions</h3>
+                <p>When you share a <strong>Google Doc</strong> or <strong>Google Sheet</strong> with "Viewer" permissions,
+                    the owner can toggle the "Allow viewers to download, copy, and print" setting off. This results in a
+                    <strong>protected PDF</strong> experience where you can see the content but cannot use the standard
+                    "File > Download" menu.</p>
+    
+                <h4>Why does this happen?</h4>
+                <p>Owners use this to ensure that the <strong>file format</strong> remains in <strong>Google Drive</strong>
+                    and prevents unauthorized redistribution. However, since the browser must render the document to display
+                    it, the visual data is already present in your memory. DriveFile Toolkit leverages this by capturing the
+                    <strong>rendered page images</strong> and assembling them into a new <strong>PDF file</strong>,
+                    effectively bypassing the UI restriction while respecting the content you are authorized to view.</p>
+    
+                <h3>Google Drive File Limits & Storage</h3>
+                <p>If you are looking to <strong>download Google Drive files</strong> to save storage space, it's important
+                    to understand how <strong>Google Drive</strong> counts <strong>file size</strong>. Native <strong>Google
+                        Docs</strong> and <strong>Sheets</strong> do not count against your storage quota until they are
+                    downloaded as <strong>DOCX</strong> or <strong>XLSX</strong>. However, once converted to a <strong>PDF
+                        file</strong> or stored as a raw upload, they consume space. Using DriveFile Toolkit to export
+                    <strong>PDFs</strong> locally allows you to archive critical <strong>documents</strong> without relying
+                    on cloud storage limits.</p>
+            </div>
+    
+            <!-- Column 2: Conversion & Formats -->
+            <div class="kb-column">
+                <h3>Converting Google Docs to PDF & DOCX</h3>
+                <p>The most common request is <strong>"how to convert Google Doc to PDF."</strong> While the native menu
+                    offers this, DriveFile Toolkit provides a faster, bulk-capable approach via URL.
+                <ul>
+                    <li><strong>PDF Export:</strong> Ideal for printing and sharing. Preserves fonts and layout exactly as
+                        seen in the viewer.</li>
+                    <li><strong>DOCX Export:</strong> If the file is not restricted, the API path can export the native
+                        <strong>Word document</strong> format, allowing for further editing in Microsoft Word.</li>
+                </ul>
+                </p>
+    
+                <h3>Google Sheets to PDF & Excel Export</h3>
+                <p><strong>"How to download Excel from Google Sheets"</strong> is a frequent pain point. Standard printing
+                    often breaks the <strong>spreadsheet</strong> grid. DriveFile Toolkit uses the API to export
+                    <strong>Google Sheets</strong> directly to <strong>PDF</strong> or <strong>XLSX</strong> (Excel). This
+                    ensures that <strong>cell formatting</strong>, merged cells, and data integrity are maintained,
+                    providing a clean <strong>Excel file download</strong> without manual printing setup.</p>
+    
+                <h3>PDF File Formats & Quality</h3>
+                <p>When generating a <strong>PDF file</strong> from a <strong>Google Doc</strong>, quality is paramount.
+                    DriveFile Toolkit offers adjustable <strong>PDF quality</strong> settings.
+                <ul>
+                    <li><strong>High Quality:</strong> Best for text-heavy <strong>documents</strong> and presentations.
+                        Ensures crisp text and high-resolution images.</li>
+                    <li><strong>Balanced:</strong> A good middle ground for <strong>file size</strong> optimization.</li>
+                    <li><strong>Small File:</strong> Reduces <strong>PDF size</strong> for easier email attachment, ideal
+                        for <strong>view-only</strong> recovery of large <strong>Google Slides</strong> decks.</li>
+                </ul>
+                </p>
+            </div>
+    
+            <!-- Column 3: Troubleshooting & Tips -->
+            <div class="kb-column">
+                <h3>Troubleshooting "Download Not Working"</h3>
+                <p>If you encounter a <strong>"Google Drive not downloading files"</strong> error, it is often due to a
+                    permission mismatch.
+                <ul>
+                    <li><strong>Check Access:</strong> Ensure you are signed in with the Google account that has access to
+                        the file.</li>
+                    <li><strong>View-Only Mode:</strong> If the API returns a permission error, switch to <strong>Page
+                            Recovery</strong> mode. This works even if the <strong>download</strong> button is missing.</li>
+                    <li><strong>Scroll to Load:</strong> In recovery mode, always scroll to the bottom of the <strong>Google
+                            Doc</strong> first. <strong>Google Drive</strong> uses lazy loading; if the page isn't rendered
+                        in the DOM, it cannot be captured.</li>
+                </ul>
+                </p>
+    
+                <h3>Best Practices for Large Documents</h3>
+                <p>For <strong>large PDF files</strong> or multi-hundred-page <strong>Google Docs</strong>, recovery mode
+                    may take longer.
+                <ul>
+                    <li><strong>Patience:</strong> The tool processes <strong>page images</strong> sequentially. A progress
+                        bar will indicate how much of the <strong>document</strong> has been captured.</li>
+                    <li><strong>Browser Performance:</strong> Ensure your browser has enough RAM. Processing
+                        <strong>high-quality</strong> <strong>PDFs</strong> from <strong>Google Slides</strong> with many
+                        images can be resource-intensive.</li>
+                    <li><strong>Local Storage:</strong> The <strong>PDF file</strong> is generated in your browser's memory
+                        before being saved to your disk. No temporary files are left on your server.</li>
+                </ul>
+                </p>
+    
+                <h3>Google Drive vs. Local Files</h3>
+                <p>While <strong>Google Drive</strong> offers great collaboration, local <strong>PDF files</strong> offer
+                    permanence. By using DriveFile Toolkit to <strong>save Google Docs as PDF</strong>, you create a static,
+                    universal <strong>file format</strong> that can be viewed on any device without an internet connection.
+                    This is essential for <strong>offline access</strong> to your <strong>documents</strong>.</p>
+            </div>
+        </div>
+    </section>
     </main>
-
+    
     <footer class="footer">
-        <a class="brand footer-brand" href="#"><span class="brand-mark">D</span><span>DriveFile
-                <b>Toolkit</b></span></a>
-        <span class="copyright">© <span id="year">2026</span> DriveFile Toolkit</span>
-        <div class="credit">DESIGNED & DEVELOPED BY <a href="https://helloimabid.com" target="_blank"
-                rel="noopener noreferrer">SADMAN ABID <span>↗</span></a></div>
+        <div class="footer-container">
+            <div class="footer-brand">
+                <a class="brand" href="#"><span class="brand-mark">D</span><span>DriveFile <b>Toolkit</b></span></a>
+                <p>Your smart companion for <strong>Google Drive</strong> exports, <strong>PDF conversion</strong>, and
+                    <strong>view-only</strong> file recovery.</p>
+            </div>
+    
+            <div class="footer-links">
+                <div class="link-group">
+                    <h4>Tools</h4>
+                    <a href="#features">PDF Recovery</a>
+                    <a href="#features">Drive Export</a>
+                    <a href="#how-it-works">How It Works</a>
+                </div>
+                <div class="link-group">
+                    <h4>Resources</h4>
+                    <a href="#knowledge">Knowledge Base</a>
+                    <a href="#faq">FAQ</a>
+                    <a href="https://github.com/helloimabid/drivefile-toolkit" target="_blank"
+                        rel="noopener noreferrer">GitHub</a>
+                </div>
+                <div class="link-group">
+                    <h4>Supported Formats</h4>
+                    <span>Google Docs</span>
+                    <span>Google Sheets</span>
+                    <span>Google Slides</span>
+                    <span>PDF, DOCX, XLSX</span>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span class="copyright">© <span id="year">2026</span> DriveFile Toolkit</span>
+            <div class="credit">DESIGNED & DEVELOPED BY <a href="https://helloimabid.com" target="_blank"
+                    rel="noopener noreferrer">SADMAN ABID <span>↗</span></a></div>
+        </div>
     </footer>
-    <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
-</body>
+    
+    <script>
+        // Update Year
+        document.getElementById("year").textContent = new Date().getFullYear();
 
-</html>
+        // Smooth Scrolling for Anchor Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+    </body>
+    
+    </html>

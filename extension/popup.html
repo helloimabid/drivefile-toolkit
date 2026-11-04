@@ -1,23 +1,70 @@
 <!doctype html>
 <html lang="en">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="stylesheet" href="popup.css"><title>DriveFile Toolkit</title></head>
-<body><main>
-  <h1>DriveFile Toolkit</h1>
-  <p class="muted">Download or export Drive files your Google account is allowed to download.</p>
-  <section class="panel">
-    <h2>Google Drive export</h2>
-    <label for="drive-url">Google Drive file URL or ID</label>
-    <input id="drive-url" type="url" placeholder="https://drive.google.com/file/d/…" autocomplete="off">
-    <button id="drive-export">Check permission &amp; export</button>
-  </section>
-  <div class="notice">The extension checks Drive's canDownload capability and stops when downloading is disabled. It does not bypass protected viewer restrictions.</div>
-  <details><summary>Authorized image-to-PDF capture</summary>
-    <p class="muted">For images you have permission to reproduce on the current page.</p>
-    <label for="quality">JPEG quality</label>
-    <select id="quality"><option value="0.92">High</option><option value="0.8">Balanced</option><option value="0.65">Smaller file</option></select>
-    <button id="start">Select page images</button>
-    <button id="make" disabled>Create PDF from selection</button>
-  </details>
-  <p id="status" role="status" aria-live="polite"></p>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="popup.css">
+  <title>DriveFile Toolkit</title>
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <div class="brand-mark" aria-hidden="true">D</div>
+      <div class="brand-copy">
+        <h1>DriveFile <span>Toolkit</span></h1>
+        <p>PDF tools for your browser</p>
+      </div>
+      <span class="status-dot" title="Ready"></span>
+    </header>
+
+    <section class="intro">
+      <span class="eyebrow">YOUR WORKSPACE</span>
+      <h2>What would you like to do?</h2>
+      <p>Export a Drive file or build a PDF from page images.</p>
+    </section>
+
+    <section class="panel" aria-labelledby="drive-title">
+      <div class="section-heading">
+        <span class="icon-tile" aria-hidden="true">↧</span>
+        <div>
+          <h3 id="drive-title">Google Drive export</h3>
+          <p>Save a file your account can download.</p>
+        </div>
+      </div>
+      <label for="drive-url">Drive file link or ID</label>
+      <input id="drive-url" type="text" placeholder="Paste a Google Drive link…" autocomplete="off" spellcheck="false">
+      <button class="primary" id="drive-export">Check access &amp; export <span aria-hidden="true">→</span></button>
+      <p class="hint">Access is checked with Google Drive before export.</p>
+    </section>
+
+    <section class="panel capture-panel" aria-labelledby="capture-title">
+      <div class="section-heading">
+        <span class="icon-tile secondary" aria-hidden="true">▤</span>
+        <div>
+          <h3 id="capture-title">Image to PDF</h3>
+          <p>Combine page images into one document.</p>
+        </div>
+      </div>
+      <details>
+        <summary>Open image capture tools <span class="chevron" aria-hidden="true">⌄</span></summary>
+        <p class="details-copy">Select images on the current page that you have permission to reproduce.</p>
+        <label for="quality">Image quality</label>
+        <select id="quality">
+          <option value="0.92">High quality</option>
+          <option value="0.8">Balanced</option>
+          <option value="0.65">Smaller file</option>
+        </select>
+        <div class="button-stack">
+          <button class="secondary-button" id="start">Select page images</button>
+          <button class="primary" id="make" disabled>Create PDF <span aria-hidden="true">→</span></button>
+        </div>
+      </details>
+    </section>
+
+    <div class="privacy-note"><span aria-hidden="true">◈</span><p>Files are processed in your browser. Protected Drive restrictions are not bypassed.</p></div>
+    <p id="status" role="status" aria-live="polite">Ready when you are.</p>
+    <footer>DRIVEFILE TOOLKIT <span>·</span> PRIVATE BY DESIGN</footer>
+  </main>
   <script src="popup.js"></script>
-</main></body></html>
+</body>
+</html>

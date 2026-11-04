@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en" class="dark">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -7,73 +8,118 @@
   <title>DriveFile Toolkit</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="popup.css">
 </head>
+
 <body>
   <div class="ambient-grid" aria-hidden="true"></div>
   <main class="app">
     <header class="header">
-      <div class="brand"><span class="brand-mark">D</span><h1>DriveFile <span>Toolkit</span></h1></div>
-      <p class="subtitle">Smart Drive Export &amp; PDF Capture</p>
+      <div class="brand"><span class="brand-mark">D</span>
+        <h1>DriveFile <span>Toolkit</span></h1>
+      </div>
+      <p class="subtitle">Smart Export & Viewer Recovery</p>
       <div class="hero-copy">
-        <span class="eyebrow"><i></i> YOUR DOCUMENT WORKSPACE</span>
-        <h2>Files, made<br><span>simpler.</span></h2>
-        <p>Export permitted Drive files or turn page images into a PDF.</p>
+        <span class="eyebrow"><i></i> RECOVER HIDDEN FILES</span>
+        <h2>Beyond the<br><span>download button.</span></h2>
+        <p>Export via API or recover PDFs from restricted viewer sessions.</p>
       </div>
     </header>
 
-    <section class="flow-card" aria-label="Quick start flow">
-      <div class="card-top"><span class="window-dots"><i></i><i></i><i></i></span><span>QUICK START FLOW</span><span class="ready"><i></i> READY</span></div>
+    <section class="flow-card" aria-label="How it works">
+      <div class="card-top"><span class="window-dots"><i></i><i></i><i></i></span><span>WORKFLOW</span><span
+          class="ready"><i></i> ACTIVE</span></div>
       <div class="flow-body">
-        <div class="flow-step"><div class="step-label">STEP 1 <span></span> EXPORT A DRIVE FILE</div><div class="code-line"><b>DRIVE</b><span>Check access</span><span class="arrow">→</span></div></div>
-        <div class="flow-step"><div class="step-label">STEP 2 <span></span> CREATE A PDF</div><div class="code-line"><b>PDF</b><span>Combine page images</span><span class="arrow">→</span></div></div>
+        <div class="flow-step">
+          <div class="step-label">01 <span></span> SMART EXPORT</div>
+          <div class="code-line"><b>API</b><span>Check & download</span><span class="arrow">→</span></div>
+        </div>
+        <div class="flow-step">
+          <div class="step-label">02 <span></span> VIEWER RECOVERY</div>
+          <div class="code-line"><b>PDF</b><span>Capture rendered pages</span><span class="arrow">→</span></div>
+        </div>
+        <div class="flow-step">
+          <div class="step-label">03 <span></span> LOCAL SAVE</div>
+          <div class="code-line"><b>FILE</b><span>Save to device</span><span class="arrow">✓</span></div>
+        </div>
       </div>
     </section>
 
     <nav class="tabs" aria-label="Toolkit actions">
-      <button class="tab active" data-tab="export" type="button">Drive Export</button>
-      <button class="tab" data-tab="capture" type="button">Page Capture</button>
+      <button class="tab active" data-tab="export" type="button">URL Export</button>
+      <button class="tab" data-tab="capture" type="button">Page Recovery</button>
     </nav>
 
+    <!-- Tab: URL Export -->
     <section id="tab-export" class="tab-content active panel">
-      <div class="section-title"><span class="section-icon">↧</span><div><h3>Google Drive export</h3><p>Download a file your account is allowed to access.</p></div></div>
-      <div class="input-group">
-        <label for="drive-url">GOOGLE DRIVE FILE URL OR ID</label>
-        <input id="drive-url" type="text" placeholder="Paste a Drive link or file ID…" autocomplete="off" spellcheck="false">
+      <div class="section-title"><span class="section-icon">↧</span>
+        <div>
+          <h3>Direct Drive Export</h3>
+          <p>Use the API to export files your account has access to.</p>
+        </div>
       </div>
-      <button id="drive-export" class="btn-primary" type="button"><span class="btn-text">Check access &amp; export</span><span>↗</span></button>
-      <p class="helper">Supports Google Docs, Sheets, Slides, and downloadable files.</p>
+      <div class="input-group">
+        <label for="drive-url">DRIVE FILE URL OR ID</label>
+        <input id="drive-url" type="text" placeholder="Paste a Drive link or file ID…" autocomplete="off"
+          spellcheck="false">
+      </div>
+      <button id="drive-export" class="btn-primary" type="button"><span class="btn-text">Export
+          File</span><span>↗</span></button>
+      <p class="helper">Automatically detects Docs, Sheets, and Slides to export as PDF.</p>
     </section>
 
+    <!-- Tab: Page Recovery -->
     <section id="tab-capture" class="tab-content panel">
-      <div class="section-title"><span class="section-icon muted-icon">▤</span><div><h3>Page image to PDF</h3><p>Combine rendered page images into one PDF.</p></div></div>
-      <div class="capture-instructions">
-        <p><b>01</b> Open a page containing images you may reproduce.</p>
-        <p><b>02</b> Make sure the page images are loaded.</p>
-        <p><b>03</b> Start capture to build your PDF.</p>
+      <div class="section-title"><span class="section-icon muted-icon">▤</span>
+        <div>
+          <h3>Restricted File Recovery</h3>
+          <p>Capture rendered pages from the active tab to build a PDF.</p>
+        </div>
       </div>
+
+      <div class="capture-instructions">
+        <p><b>1.</b> Open the Google Doc or Drive file in a tab.</p>
+        <p><b>2.</b> <strong>Scroll to the bottom</strong> to load all page images.</p>
+        <p><b>3.</b> Click capture. We'll grab what's on screen.</p>
+      </div>
+
       <div class="input-group">
         <label for="quality">IMAGE QUALITY</label>
         <select id="quality">
-          <option value="0.92">High quality</option>
+          <option value="0.92">High (Recommended)</option>
           <option value="0.8">Balanced</option>
-          <option value="0.65">Smaller file</option>
+          <option value="0.65">Small File</option>
         </select>
       </div>
-      <button id="start-capture" class="btn-primary" type="button"><span class="btn-text">Capture &amp; export PDF</span><span>↗</span></button>
-      <div class="notice"><span>ⓘ</span><p>Only captures page images available to the extension. Protected viewer restrictions are not bypassed.</p></div>
+
+      <button id="start-capture" class="btn-primary" type="button"><span class="btn-text">Recover & Export
+          PDF</span><span>↗</span></button>
+
+      <div class="notice">
+        <span class="notice-icon">ⓘ</span>
+        <span>Best for files where "Download" is disabled. Works by capturing the high-fidelity images Google renders in
+          the viewer.</span>
+      </div>
     </section>
 
     <section id="progress-container" class="progress-area hidden" aria-live="polite">
-      <div class="progress-header"><span id="progress-label">Processing...</span><span id="progress-percent">0%</span></div>
-      <div class="progress-bar-bg"><div id="progress-bar" class="progress-bar-fill"></div></div>
+      <div class="progress-header"><span id="progress-label">Processing...</span><span id="progress-percent">0%</span>
+      </div>
+      <div class="progress-bar-bg">
+        <div id="progress-bar" class="progress-bar-fill"></div>
+      </div>
       <p id="progress-status" class="progress-status">Initializing...</p>
     </section>
+
     <div id="status" class="status-toast" role="status" aria-live="polite"></div>
-    <div class="privacy-note"><span>◈</span> Processed in your browser · Permission-aware</div>
-    <footer>DEVELOPED BY <a href="https://helloimabid.com" target="_blank" rel="noopener noreferrer">SADMAN ABID</a></footer>
+
+    <footer>DEVELOPED BY <a href="https://helloimabid.com" target="_blank" rel="noopener noreferrer">SADMAN ABID</a>
+    </footer>
   </main>
   <script src="popup.js"></script>
 </body>
+
 </html>

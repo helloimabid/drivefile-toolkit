@@ -1,59 +1,89 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="dark">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="#0b1020">
-  <meta name="description" content="A simple, private browser toolkit for exporting permitted Google Drive files and creating PDFs from page images.">
-  <title>DriveFile Toolkit — Simple PDF tools</title>
+  <meta name="theme-color" content="#0a0a0a">
+  <meta name="description" content="DriveFile Toolkit helps you export permitted Google Drive files and create PDFs from page images in your browser.">
+  <title>DriveFile Toolkit — Smart Drive Export &amp; PDF Capture</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <main class="shell">
-    <nav class="nav">
+  <div class="ambient" aria-hidden="true"><div class="grid"></div><div class="glow"></div><div class="fade"></div></div>
+  <main class="page">
+    <header class="hero">
       <a class="brand" href="#" aria-label="DriveFile Toolkit home"><span class="brand-mark">D</span><span>DriveFile <b>Toolkit</b></span></a>
-      <a class="nav-link" href="#how-it-works">How it works <span aria-hidden="true">↗</span></a>
-    </nav>
-
-    <section class="hero">
       <div class="hero-copy">
-        <div class="eyebrow"><span></span> A SMALL TOOL FOR YOUR DOCUMENTS</div>
-        <h1>Your files.<br><span>Your workflow.</span></h1>
-        <p class="lead">A clean, simple way to export Google Drive files you can download and turn permitted page images into a PDF — right in your browser.</p>
-        <div class="hero-actions">
-          <a class="button primary" href="https://github.com/helloimabid/drivefile-toolkit" target="_blank" rel="noreferrer">View on GitHub <span aria-hidden="true">↗</span></a>
-          <a class="button ghost" href="#how-it-works">Explore features</a>
-        </div>
-        <div class="trust-line"><span aria-hidden="true">◈</span> Browser-based processing <i></i> No account needed for image-to-PDF</div>
-      </div>
-      <div class="preview-wrap" aria-label="Illustration of the DriveFile Toolkit extension">
-        <div class="glow"></div>
-        <div class="preview">
-          <div class="preview-top"><div class="mini-brand">D</div><div><b>DriveFile <em>Toolkit</em></b><small>PDF tools for your browser</small></div><span class="ready"><i></i> Ready</span></div>
-          <div class="preview-title"><small>YOUR WORKSPACE</small><b>What would you<br>like to do?</b><span>Choose a tool to get started.</span></div>
-          <div class="preview-card"><div class="preview-icon">↧</div><div><b>Google Drive export</b><small>Save a file your account can download.</small></div><span>→</span></div>
-          <div class="preview-card"><div class="preview-icon green">▤</div><div><b>Image to PDF</b><small>Combine page images into one document.</small></div><span>→</span></div>
-          <div class="preview-foot"><span>◈</span> PRIVATE BY DESIGN</div>
+        <span class="eyebrow"><i></i> SMART DRIVE EXPORT &amp; PDF CAPTURE</span>
+        <h1>Your documents,<br><span>without the clutter.</span></h1>
+        <p class="lead">A simple browser toolkit to export Google Drive files your account can download and turn permitted page images into a PDF.</p>
+        <div class="actions">
+          <a class="button light" href="https://github.com/helloimabid/drivefile-toolkit" target="_blank" rel="noopener noreferrer">View project on GitHub <span>↗</span></a>
+          <a class="button outline" href="#features">Explore features <span>↓</span></a>
         </div>
       </div>
-      <div class="hero-orb orb-one"></div><div class="hero-orb orb-two"></div>
-    </section>
 
-    <section class="features" id="how-it-works">
-      <div class="section-intro"><div class="eyebrow">BUILT TO STAY SIMPLE</div><h2>Everything you need.<br><span>Nothing you don't.</span></h2></div>
+      <section class="flow-card" aria-label="Quick start flow">
+        <div class="card-top"><div class="window-dots"><i></i><i></i><i></i></div><span>QUICK START FLOW</span><span class="live"><i></i> SIMPLE WORKFLOW</span></div>
+        <div class="flow-content">
+          <div class="flow-step">
+            <div class="step-heading">01 <span>EXPORT A DRIVE FILE</span><i></i></div>
+            <div class="code"><b>DRIVE</b><span>Check account access</span><span class="arrow">→</span></div>
+          </div>
+          <div class="flow-step">
+            <div class="step-heading">02 <span>CREATE A PDF</span><i></i></div>
+            <div class="code"><b>PDF</b><span>Combine page images</span><span class="arrow">→</span></div>
+          </div>
+          <div class="flow-step">
+            <div class="step-heading">03 <span>SAVE LOCALLY</span><i></i></div>
+            <div class="code"><b>LOCAL</b><span>Keep your file on your device</span><span class="arrow">✓</span></div>
+          </div>
+        </div>
+        <div class="card-foot"><span>◈</span> BROWSER-BASED WORKFLOW <span class="divider">/</span> PERMISSION-AWARE</div>
+      </section>
+    </header>
+
+    <section class="feature-section" id="features">
+      <div class="section-heading">
+        <div><span class="eyebrow">MADE TO STAY SIMPLE</span><h2>Everything you need.<br><span>Nothing you don't.</span></h2></div>
+        <p>Two focused tools, one clean interface. No unnecessary steps.</p>
+      </div>
       <div class="feature-grid">
-        <article class="feature"><div class="feature-icon">↧</div><h3>Drive export</h3><p>Check file access and export supported Google Drive files using your Google account.</p></article>
-        <article class="feature"><div class="feature-icon green">▤</div><h3>Images into PDF</h3><p>Select page images on a page and combine them into a single PDF in a few clicks.</p></article>
-        <article class="feature"><div class="feature-icon violet">◈</div><h3>Private by design</h3><p>Image-to-PDF processing happens locally in your browser. Your selected images are not uploaded.</p></article>
+        <article class="feature-card">
+          <div class="feature-icon">↧</div><span class="card-kicker">01 / DRIVE</span>
+          <h3>Google Drive export</h3>
+          <p>Check file permissions and export supported Docs, Sheets, Slides, and downloadable files using your Google account.</p>
+          <div class="feature-meta"><span class="dot blue"></span> GOOGLE DRIVE API</div>
+        </article>
+        <article class="feature-card">
+          <div class="feature-icon">▤</div><span class="card-kicker">02 / PDF</span>
+          <h3>Page images to PDF</h3>
+          <p>Select page images available on a page and combine them into a single PDF with adjustable image quality.</p>
+          <div class="feature-meta"><span class="dot green"></span> LOCAL PROCESSING</div>
+        </article>
+        <article class="feature-card">
+          <div class="feature-icon">◈</div><span class="card-kicker">03 / PRIVACY</span>
+          <h3>Private by design</h3>
+          <p>Image-to-PDF creation happens in your browser. Your selected images are not uploaded by the extension.</p>
+          <div class="feature-meta"><span class="dot gray"></span> YOUR BROWSER</div>
+        </article>
       </div>
     </section>
 
-    <section class="callout">
-      <div><div class="eyebrow">A NOTE ON ACCESS</div><h2>Respecting file permissions matters.</h2><p>Drive export follows the download access granted to your Google account. This tool does not bypass protected viewer restrictions.</p></div>
-      <a href="https://github.com/helloimabid/drivefile-toolkit" target="_blank" rel="noreferrer">Explore the project <span aria-hidden="true">↗</span></a>
+    <section class="permission-card">
+      <div class="permission-icon">ⓘ</div>
+      <div><span class="eyebrow">ACCESS &amp; PERMISSIONS</span><h2>Your files stay within their permissions.</h2><p>Drive export checks whether your Google account can download the file. The toolkit does not bypass disabled downloads or protected viewer restrictions.</p></div>
     </section>
-
-    <footer><a class="brand" href="#"><span class="brand-mark">D</span><span>DriveFile <b>Toolkit</b></span></a><span>Made for a simpler document workflow.</span><span>© DriveFile Toolkit</span></footer>
   </main>
+
+  <footer class="footer">
+    <a class="brand footer-brand" href="#"><span class="brand-mark">D</span><span>DriveFile <b>Toolkit</b></span></a>
+    <span class="copyright">© <span id="year">2026</span> DriveFile Toolkit</span>
+    <div class="credit">DESIGNED &amp; DEVELOPED BY <a href="https://helloimabid.com" target="_blank" rel="noopener noreferrer">SADMAN ABID <span>↗</span></a></div>
+  </footer>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
 </body>
 </html>
